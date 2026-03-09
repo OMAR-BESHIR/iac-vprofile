@@ -73,7 +73,19 @@ jobs:
         if: steps.apply.outcome == 'success'
         run: |
           aws eks update-kubeconfig --region ${{ env.AWS_REGION }} --name ${{ env.EKS_CLUSTER }}
-          echo "KUBECONFIG=$HOME/.kube/config" >> $GITHUB_ENV
+          echo "KUBECONFIG=$HOME/.kube/config" >> $GITHUB_ENV 
+
+      - name: Debug kubectl
+        if: steps.getconfig.outcome == 'success'
+        run: |
+          echo "=== KUBECONFIG PATH ==="
+          echo $KUBECONFIG
+          echo "=== KUBE CONFIG CONTENT ==="
+          cat ~/.kube/config
+          echo "=== KUBECTL NODES ==="
+          kubectl get nodes
+          echo "=== AWS IDENTITY ==="
+          aws sts get-caller-identity    
         
       - name: Install Ingress controller
         if: steps.apply.outcome == 'success' && steps.getconfig.outcome == 'success'
