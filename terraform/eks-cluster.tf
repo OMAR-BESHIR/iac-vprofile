@@ -23,7 +23,7 @@ module "eks" {
 
   access_entries = {
     github_actions = {
-      principal_arn = "arn:aws:iam::532523613767:user/YOUR_IAM_USERNAME"
+      principal_arn = "arn:aws:iam::532523613767:user/OMAR"
       type          = "STANDARD"
       policy_associations = {
         admin = {
