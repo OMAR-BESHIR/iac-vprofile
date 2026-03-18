@@ -6,7 +6,7 @@ This repository contains the **Infrastructure as Code (IaC)** for deploying a pr
 
 The following diagram illustrates the workflow and the cloud infrastructure components involved in this project:
 
-![Architecture Diagram](Screenshot%202026-03-15%20163518.png)
+![Architecture Diagram](images/Screenshot%202026-03-15%20163518.png)
 
 ### Key Components:
 * **Terraform:** Managed infrastructure provisioning (VPC, EKS, Node Groups).
@@ -23,12 +23,12 @@ Once the pipeline completes, the following resources are live on AWS:
 ### 1. Amazon EKS Cluster
 The cluster is configured with the latest stable Kubernetes version and high availability settings.
 
-![EKS Cluster Dashboard](Screenshot%202026-03-11%20153022.png)
+![EKS Cluster Dashboard](images/Screenshot%202026-03-11%20153022.png)
 
 ### 2. Managed Node Groups
 Scalable worker nodes (e.g., `t3.small`) are managed within a VPC subnet to handle application workloads.
 
-![EKS Node Groups](Screenshot%202026-03-11%20153048.png)
+![EKS Node Groups](images/Screenshot%202026-03-11%20153048.png)
 
 ---
 
